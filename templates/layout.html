@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="Shortcut Icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" />
+    <title>Granoly - Inspiraciones con Amor</title>
+    
+	 <!-- <link href='http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'> 
+	 -->
+	  <!-- Bootstrap CSS file -->
+		<link rel="stylesheet" href=  "{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" />
+		<!-- Bootstrap Theme CSS file -->
+		<link rel="stylesheet" href= "{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" type="text/css" />
+		<!-- bxSlider CSS file -->
+		<link rel="stylesheet" href= "{{ url_for('static', filename='css/jquery.bxslider.css') }}"  type="text/css" />
+		<link href="{{ url_for('static', filename='css/ekko-lightbox.min.css') }}"  rel="stylesheet" />
+		<!-- Custom CSS file -->
+		<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+		<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/icofont.min.css') }}">
+
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+		 <script type=text/javascript src="{{url_for('static', filename='js/custom.js') }}"></script> 
+		 <script type=text/javascript src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+	</head>
+<body>
+	
+	<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Navegación móvil</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="logo" href="/"><img alt="Maryal Lácteos" src="{{ url_for('static', filename='images/logo_granoly_header.png') }}"/></a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li id="index"><a href="./">Inicio <span class="sr-only">(activo)</span></a></li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nosotros<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="/quienes-somos.php">Quienes somos</a></li>
+									<li><a href="/nuestros-valores.php">Nuestros valores</a></li>
+								</ul>
+							</li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="about">Yogures</a></li>
+									<li><a href="/nuestros-valores.php">Arroz con leche</a></li>
+								</ul>
+							</li>
+														
+							<li id="pedidos"><a href="contact">Pedidos</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+					<div class="clearfix"></div>
+				</div><!--/.container-fluid -->
+			</nav> 
+
+    <!-- Contenido central -->  
+    <div class="container p-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+   <!-- Contenido central -->   
+   
+	<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="logo-footer"><img src="{{ url_for('static', filename='images/logo_granoly_footer.png') }}"></div>
+						<h4>Mapa del sitio</h4>
+						<ul class="sitemap">
+							<li><a href="/">Inicio</a></li>
+							<li><a href="/quienes-somos.php">Quienes somos</a></li>
+							<li><a href="/metodologia.php">Nuestros productos</a></li>
+							<li><a href="about">Pedidos</a></li>
+						</ul>
+					</div>
+					
+					<div class="col-md-5 productos-footer">
+						
+						<h4 id="yogur-footer">Yogur artesanal con toppins de...</h4>
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="lista-sabores">
+									<li>Fresa</li>
+									<li> Mango</li>
+									<li>Mora</li>
+									<li>Banano</li>
+									<li>Kiwi</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="lista-sabores">
+									<li>Durazno</li>
+									<li>Melocotón</li>
+									<li>Guayaba</li>
+									<li>Piña</li>
+									<li>Brownie</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-md-2 productos-footer">
+						<h4 id="maracuya-footer">Yogurt artesanal de Maracuyá</h4>
+						<h4 id="arroz-footer">Arroz con leche artesanal</h4>
+						<p class="big">¿Está interesado en nuestros productos?</p>
+						<a class="btn btn-primary btn-lg" href="contact" role="button">Pedidos</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-text">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9 copyright">
+							Granoly © 2019. Todos los derechos reservados.    
+						</div>
+						<div class="col-md-3 text-right social">
+							<a class="icofont-facebook" id="facebook_icon" target=_blank href="https://www.facebook.com/Granoly-Tejidos-288897871998728/"></a>
+							<a class="icofont-instagram" target=_blank href="https://www.instagram.com/granolytejidos/"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+</body>
+
+
+</html>
